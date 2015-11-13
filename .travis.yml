@@ -20,6 +20,8 @@ install:
   - sudo rosdep init
   - rosdep update
   # Use rosdep to install all dependencies (including ROS itself)
+  - cd $CATKIN_WS/src && git clone https://github.com/ipa320/cob_environment_perception 
+  - ls $CATKIN_WS/src
   - rosdep install --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
 script:
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
